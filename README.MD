@@ -19,14 +19,17 @@
 
 
 ## Problem solved:
-This section includes problems i solved from various platforms ..... 
+This section includes problems I solved from various platforms ..... 
 
 - ### List of Platforms used:
     - Codeforces
+        - Includes Codeforces Problems I solved.
+    - Leetcode
+        - Includes Leetcode 30 day challenges and Leetcode problems I solved.
 
 
 ## CP Utilities:
-This section contains the various CP utilites i have including algorithms, datastructure implementations and various CP utilities.. 
+This section contains the various CP utilites I have including algorithms, datastructure implementations and various CP utilities.. 
 
 ## Author info:
 Follow me or connect with me in the below platforms...
