@@ -1,4 +1,0 @@
-#Competitive Programming
-
-##Contents:
-
