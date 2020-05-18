@@ -30,6 +30,8 @@ This section includes problems I solved from various platforms .....
     - Includes Leetcode 30 day challenges and Leetcode problems I solved.
   - Geeks For Geeks
     - Topic wise solution for concept
+  - Interview Bits
+    - Solving all problems in the given track order
 
 ## CP Utilities:
 
