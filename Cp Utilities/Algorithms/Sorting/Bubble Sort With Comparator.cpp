@@ -1,16 +1,21 @@
-// Bubble sort implementation...
+// Bubble sort implementation with my own comparators... This was created with the view to understand the sort function comparator...
 // Time Complexity: O(n^2)
 
 #include <bits/stdc++.h>
 using namespace std;
 
-void BubbleSort(int arr[], int n)
+bool compare(int a, int b)
+{
+    return a < b;
+}
+
+void BubbleSort(int arr[], int n, bool (&cmp)(int a, int b))
 {
     for (int itr = 1; itr <= n - 1; itr++)
     {
         for (int j = 0; j <= n - itr - 1; j++)
         {
-            if (arr[j] > arr[j + 1])
+            if (cmp(arr[j], arr[j + 1]))
             {
                 swap(arr[j], arr[j + 1]);
             }
@@ -30,7 +35,7 @@ int main()
         cin >> a[i];
     }
     cout << endl;
-    BubbleSort(a, n);
+    BubbleSort(a, n, compare);
     for (int i = 0; i < n; i++)
     {
         cout << a[i] << " ";
