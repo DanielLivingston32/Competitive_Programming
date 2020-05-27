@@ -1,4 +1,4 @@
-// To print the elements of a 2 D array like a way .. For eg: First column from top to bottom... Second column from bottom to top etc
+// To print the elements of a 2 D array like a wave .. For eg: First column from top to bottom... Second column from bottom to top etc
 #include <bits/stdc++.h>
 using namespace std;
 
