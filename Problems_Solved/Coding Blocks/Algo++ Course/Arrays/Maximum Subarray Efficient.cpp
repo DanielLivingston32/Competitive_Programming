@@ -1,5 +1,6 @@
 // This approach is using Kadane's Algorithm...
 // Time Complexity: O(N)
+// This algorithm can be modified to suit solutions for other problems...
 
 #include <bits/stdc++.h>
 using namespace std;
