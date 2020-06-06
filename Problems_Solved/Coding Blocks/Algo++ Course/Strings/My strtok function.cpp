@@ -49,11 +49,11 @@ int main()
     cout << endl
          << "Gonna print each word in string line by line" << endl;
 
-    char *ptr = mystrtok(s, " ");
+    char *ptr = mystrtok(s, ' ');
     cout << ptr << endl;
     while (ptr != NULL)
     {
-        ptr = mystrtok(NULL, " ");
+        ptr = mystrtok(NULL, ' ');
         cout << ptr << endl;
     }
 }
