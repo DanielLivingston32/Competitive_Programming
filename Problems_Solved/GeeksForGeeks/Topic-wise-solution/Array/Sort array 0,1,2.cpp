@@ -68,3 +68,29 @@ void sort012(int a[], int n)
         no++;
     }
 }
+
+// This is an efficient approach.....
+
+void sort012_eff(int a[], int n)
+{
+    int low = 0, mid = 0, high = n - 1;
+    while (mid <= high)
+    {
+        if (a[mid] == 0)
+        {
+            if (low != mid)
+                swap(a[low], a[mid]);
+            low++;
+            mid++;
+        }
+        else if (a[mid] == 2)
+        {
+            swap(a[high], a[mid]);
+            high--;
+        }
+        else
+        {
+            mid++;
+        }
+    }
+}
