@@ -1,35 +1,17 @@
 #include<iostream>
+#include<cmath>
+
 
 using namespace std;
 
 int main(){
-    char ch;
-    cin>>ch;
-    while(ch!='X' && ch!='x'){
-        if(ch=='+'){
-            int n1,n2;
-            cin>>n1>>n2;
-            cout<<n1+n2<<endl;    
-        }else if(ch=='-'){
-            int n1,n2;
-            cin>>n1>>n2;
-            cout<<n1-n2<<endl;    
-        }else if(ch=='*'){
-            int n1,n2;
-            cin>>n1>>n2;
-            cout<<n1*n2<<endl;    
-        }else if(ch=='/'){
-            int n1,n2;
-            cin>>n1>>n2;
-            cout<<n1/n2<<endl;    
-        }else if(ch=='%'){
-            int n1,n2;
-            cin>>n1>>n2;
-            cout<<n1%n2<<endl;    
-        }else{
-            cout<<"Invalid operation. Try again."<<endl;
+    long int no;
+    cin>>no;
+    for(int i=2;i<sqrt(no);i++){
+        if(no % i == 0){
+            cout<<"Not Prime";
+            return 0;
         }
-        cin>>ch;
     }
-
+    cout<<"Prime";
 }
