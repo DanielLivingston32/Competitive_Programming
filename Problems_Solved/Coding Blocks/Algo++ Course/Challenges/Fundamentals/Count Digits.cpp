@@ -1,17 +1,19 @@
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
-int main(){
+int main()
+{
     long int no;
-    int check_no,cnt = 0;
-    cin>>no>>check_no;
-    while(no){
-        if(no%10==check_no){
+    int check_no, cnt = 0;
+    cin >> no >> check_no;
+    while (no)
+    {
+        if (no % 10 == check_no)
+        {
             cnt++;
         }
-        no/=10;
+        no /= 10;
     }
-    cout<<cnt;
-    
+    cout << cnt;
 }
