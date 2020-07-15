@@ -1,21 +1,22 @@
-#include<iostream>
-#include<algorithm>
-#include<vector>
-
+#include <iostream>
+#include <algorithm>
+#include <vector>
 
 using namespace std;
 
-int main(){
+int main()
+{
     long int no;
-    cin>>no;
+    cin >> no;
     vector<int> ans;
-    while(no){
-        ans.push_back(no%8);
-        no/=8;
+    while (no)
+    {
+        ans.push_back(no % 8);
+        no /= 8;
     }
-    reverse(ans.begin(),ans.end());
-    for(int i=0;i<ans.size();i++){
-        cout<<ans[i];
+    reverse(ans.begin(), ans.end());
+    for (int i = 0; i < ans.size(); i++)
+    {
+        cout << ans[i];
     }
-
 }
