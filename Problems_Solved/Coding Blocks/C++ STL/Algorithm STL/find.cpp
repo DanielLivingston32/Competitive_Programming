@@ -14,4 +14,5 @@ int main()
 
     auto it = find(arr, arr + n, key);
     cout << it - arr << endl;
+    
 }
