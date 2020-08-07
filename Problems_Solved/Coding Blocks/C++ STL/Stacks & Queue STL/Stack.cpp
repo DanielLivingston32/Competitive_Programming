@@ -8,7 +8,7 @@ class stack {
     int cs=0;
     int ms=0;
 public:
-    stack(int size) {
+    stack(int size = 1) {
         cs=0;
         ms=size;
         arr = new T[ms];
@@ -27,7 +27,7 @@ public:
                 }
                 delete[] oldArr;
             }
-            else{
+            else {
                 return;
             }
 
@@ -37,8 +37,8 @@ public:
     }
 
     void pop() {
-        if(cs==0){
-            cout<<"Underflow Error...";
+        if (cs==0) {
+            cout<<"Underflow Error... Please try again with another option"<<endl;
             return;
         }
         cs--;
@@ -56,22 +56,50 @@ public:
         return cs==ms;
     }
 
+    void display() {
+        if (cs==0) {
+            cout<<"No elements in stack"<<endl;
+            return;
+        }
+        cout<<"Elements in stack are as follows: ";
+        for (int i=0;i<cs;i++) {
+            cout<<arr[i]<<" ";
+        }
+        cout<<endl;
+    }
+
 };
 
 int main() {
-    stack<int> s(3);
-    s.push(1);
-    s.push(2);
-    s.push(3);
-    s.pop();
-    s.pop();
-    s.pop();
-    s.pop();
-    while (!s.empty())
-    {
-        cout << s.top() << " ";
-        s.pop();
+    int n;
+    cout<<"Enter the default size of the stack: ";
+    cin>>n;
+    stack<int> s(n);
+    cout<<"Choose any one of the given option: "<<endl;
+    cout<<"1) Push\n2) Pop\n3) Display\n4) Exit"<<endl;
+    int choice, value;
+    cin>>choice;
+    while (choice!=4) {
+        switch (choice) {
+        case 1:
+            cout<<"Enter the value to be pushed: ";
+            cin>>value;
+            s.push(value);
+            break;
+        case 2:
+            cout<<"The element which got removed from the stack is "<<s.top()<<endl;
+            s.pop();
+            break;
+        case 3:
+            s.display();
+            break;
+        default:
+            cout<<"Sorry Invalid input. Try again "<<endl;
+        }
+        cout<<"Choose any one of the given option: "<<endl;
+        cout<<"1) Push\n2) Pop\n3) Display\n4) Exit"<<endl;
+        cin>>choice;
+
     }
-    cout << endl;
 
 }
