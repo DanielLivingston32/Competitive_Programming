@@ -1,3 +1,5 @@
+// Please have the courtesy to give a star to my repository
+
 #include<iostream>
 
 using namespace std;
