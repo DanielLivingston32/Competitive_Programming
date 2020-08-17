@@ -1,20 +1,21 @@
+// Time Complexity: O(Log n)
 #include <iostream>
 
 using namespace std;
 
-int binarySearch(int a[], int n, int key)
+long int binarySearch(int a[], long int n, int key)
 {
-    int start = 0;
-    int end = n - 1;
-    int mid;
+    long int start = 0;
+    long int end = n - 1;
+    long int mid;
     while (start <= end)
     {
         mid = (start + end) / 2;
-        if (mid == key)
+        if (a[mid] == key)
         {
             return mid;
         }
-        else if (mid > key)
+        else if (a[mid] > key)
         {
             end = mid - 1;
         }
@@ -28,7 +29,7 @@ int binarySearch(int a[], int n, int key)
 
 int main()
 {
-    int n;
+    long int n;
     cin >> n;
     int arr[n];
     for (int i = 0; i < n; i++)
@@ -37,5 +38,5 @@ int main()
     }
     int key;
     cin >> key;
-    cout << (binarySearch(arr, n, key) == -1 ? "Element not Found" : "Element found");
+    cout << binarySearch(arr, n, key);
 }
