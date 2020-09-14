@@ -14,7 +14,7 @@ public class Ex_4k {
                                 : "The char present at the given index is: " + a.charAt(idx)));
                 System.out.println("2) append function");
                 System.out.println(
-                                "Enter the second string to append it to the first string[One function of append is to append a str to strbuilder]");
+                                "Enter the second string to append it to the first string[One of the function of append is to append a str to strbuilder]");
                 s.nextLine();
                 b = s.nextLine();
                 StringBuilder input = new StringBuilder();
@@ -31,6 +31,7 @@ public class Ex_4k {
                 a = s.nextLine();
                 b = s.nextLine();
                 inp.insert(idx, b);
+
                 System.out.println("The resultant string is: " + inp);
         }
 }
