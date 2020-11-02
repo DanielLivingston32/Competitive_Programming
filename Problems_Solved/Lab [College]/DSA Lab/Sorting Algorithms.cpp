@@ -87,7 +87,11 @@ int main()
         default:
             cout << "Wrong Choice... Try again...\n";
         }
+<<<<<<< HEAD
         cout << "Which Algorithm you want to use?\n1. Selection sort\n2. Insertion Sort\n3. Exit\n";
+=======
+        cout << "Which Algorithm you want to use?\n1. Inserting sort\n2. Selection Sort\n3. Exit\n";
+>>>>>>> 4e8621e022dd4091fec33647af2e0e65ee139dcf
         cin >> choice;
     }
 }

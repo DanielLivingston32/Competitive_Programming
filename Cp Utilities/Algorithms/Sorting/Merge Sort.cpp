@@ -8,7 +8,11 @@ void merge(int arr[], int s, int e)
     int j = mid + 1;
     int k = s;
 
+<<<<<<< HEAD
     int temp[1000];
+=======
+    int temp[100];
+>>>>>>> 4e8621e022dd4091fec33647af2e0e65ee139dcf
     while (i <= mid && j <= e)
     {
         if (arr[i] < arr[j])
@@ -76,4 +80,8 @@ int main()
     {
         cout << a[i] << " ";
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4e8621e022dd4091fec33647af2e0e65ee139dcf
