@@ -37,7 +37,7 @@ public class Shapes {
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        System.out.println("What do you want to choose:\n1) Rectangle\n2) Triangle\n3)exit");
+        System.out.println("What do you want to choose:\n1) Rectangle\n2) Triangle\n3) exit");
         int choice = s.nextInt();
         int height, width;
         Shape shape_container;
