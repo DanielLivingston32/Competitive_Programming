@@ -6,7 +6,7 @@ public class ExceptionHandling1 {
         try {
             int a = 15 / 0;
         } catch (ArithmeticException e) {
-            System.out.println("Arithmetic Exception caught.\n\n");
+            System.out.println("Arithmetic Exception caught.\n" + e.getMessage() + "\n");
         }
 
         System.out.println("2) NullPointerException Example:\n");
@@ -23,7 +23,7 @@ public class ExceptionHandling1 {
         try {
             int a = Integer.parseInt(null);
         } catch (NumberFormatException e) {
-            System.out.println("NumberFormatException caught.\n\n");
+            System.out.println("NumberFormatException caught.\n" + e.getCause() + "\n");
         }
 
         System.out.println("4) ArrayIndexOutOfBoundsException Example:\n");
@@ -31,7 +31,7 @@ public class ExceptionHandling1 {
             int a[] = new int[1];
             a[3] = 45;
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("ArrayIndexOutOfBoundsException caught.\n\n");
+            System.out.println("ArrayIndexOutOfBoundsException caught.\n" + e.getMessage() + "\n");
         }
     }
 }
