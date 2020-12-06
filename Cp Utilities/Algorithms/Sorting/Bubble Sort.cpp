@@ -1,6 +1,3 @@
-// Bubble sort implementation...
-// Time Complexity: O(n^2)
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -20,9 +17,10 @@ void BubbleSort(int arr[], int n)
 
 int main()
 {
-    int n, a[1000];
+    int n;
     cout << "Enter no of elements in array: ";
     cin >> n;
+    int arr[n];
     cout << endl
          << "Enter array elements to sort: " << endl;
     for (int i = 0; i < n; i++)
