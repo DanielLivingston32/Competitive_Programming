@@ -190,18 +190,8 @@ void Quadratic_Probing(int arr[], int n)
 
 int main()
 {
-    // Identification
-    string collision = "\U0001F4A5";
-    string copyright = "️\U000000A9";
-    string fire_emoji = "\U0001F525";
-    cout << endl
-         << endl
-         << copyright << " COPYRIGHT" << endl
-         << fire_emoji << "DANIEL LIVINGSTON" << fire_emoji << endl
-         << collision << "URK19CS2001" << collision << endl
-         << endl;
-    // End Identification - Program Starts
-
+    cout << "Register No: URK19CS2011" << endl;
+    cout << "Name: Mounika Murugadass" << endl << endl;
     int choice, n;
     cout << "\nHey user,\nEnter the size of the hash table you want to use:\n";
     cin >> n;
