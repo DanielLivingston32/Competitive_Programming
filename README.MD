@@ -26,10 +26,14 @@ This section includes problems I solved from various platforms .....
 - ### List of Platforms used:
   - Codeforces
     - Includes Codeforces Problems I solved.
+  - CodeChef
+    - Includes the problems I solved in Codechef.
   - Leetcode
     - Includes Leetcode 30 day challenges and Leetcode problems I solved.
   - Geeks For Geeks
     - Topic wise solution for concept
+  - Coding blocks
+    - Includes all the problems I solved in Hackerblocks and Coding blocks.
   - Interview Bits
     - Solving all problems in the given track order
 
