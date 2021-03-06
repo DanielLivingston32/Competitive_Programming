@@ -12,11 +12,11 @@ void QuickSort(int arr[], int s, int e)
 
     // Follow these 3 steps.
     // First step was to find pivot and arrange element according to pivot in array.
-    int p = pivot(arr,s,e);
+    int p = pivot(arr, s, e);
 
     // Call the left and right part of pivot to be sorted by recursion
     QuickSort(arr, s, mid);
-    Quick   Sort(arr, mid + 1, e);
+    QuickSort(arr, mid + 1, e);
 
     // Merge the arrays
     merge(arr, s, e);
