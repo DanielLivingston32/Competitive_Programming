@@ -62,17 +62,6 @@ int main()
 {
     ios_base::sync_with_stdio(0);
 
-    // Identification
-    string collision = "\U0001F4A5";
-    string copyright = "️\U000000A9";
-    string fire_emoji = "\U0001F525";
-    cout << endl
-         << endl
-         << copyright << " COPYRIGHT" << endl
-         << fire_emoji << "DANIEL LIVINGSTON" << fire_emoji << endl
-         << collision << "URK19CS2001" << collision << endl
-         << endl;
-    // End Identification - Program Starts
     
 
     cout << "Enter the total no of elements: " << endl;

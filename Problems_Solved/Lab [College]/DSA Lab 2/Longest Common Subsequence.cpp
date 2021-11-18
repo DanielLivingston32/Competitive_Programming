@@ -34,18 +34,7 @@ int max(int a, int b)
 
 int main()
 {
-    // Identification
-    string collision = "\U0001F4A5";
-    string copyright = "️\U000000A9";
-    string fire_emoji = "\U0001F525";
-    cout << endl
-         << endl
-         << copyright << " COPYRIGHT" << endl
-         << fire_emoji << "DANIEL LIVINGSTON" << fire_emoji << endl
-         << collision << "URK19CS2001" << collision << endl
-         << endl;
-    // End Identification - Program Starts
-
+    
     cout << "Enter the size of the first string: ";
 
     int n;

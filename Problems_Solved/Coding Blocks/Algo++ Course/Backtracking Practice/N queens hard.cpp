@@ -42,23 +42,23 @@ void nQueens(int output[15][15], int n, int i, int &count)
     if (i == n)
     {
         // Print the board
-        // for (int k = 0; k < n; k++)
-        // {
-        //     for (int l = 0; l < n; l++)
-        //     {
-        //         if (output[k][l])
-        //         {
-        //             cout << "Q ";
-        //         }
-        //         else
-        //         {
-        //             cout << "_ ";
-        //         }
-        //     }
-        //     cout << endl;
-        // // }
-        // cout << endl
-        //      << endl;
+        for (int k = 0; k < n; k++)
+        {
+            for (int l = 0; l < n; l++)
+            {
+                if (output[k][l])
+                {
+                    cout << "Q ";
+                }
+                else
+                {
+                    cout << "_ ";
+                }
+            }
+            cout << endl;
+        }
+        cout << endl
+             << endl;
 
         count++;
         return;
@@ -84,6 +84,7 @@ int main()
     ios_base::sync_with_stdio(0);
 
     int n;
+    cout << "Enter the size of the chess grid: ";
     cin >> n;
 
     int output[15][15] = {0};
@@ -91,8 +92,7 @@ int main()
     int count = 0;
 
     nQueens(output, n, 0, count);
-
-    cout << count;
+    cout << "Total no of Possible results: " << count;
 
     return 0;
 }

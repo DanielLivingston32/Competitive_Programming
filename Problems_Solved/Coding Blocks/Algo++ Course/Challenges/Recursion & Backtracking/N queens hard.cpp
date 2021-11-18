@@ -7,7 +7,7 @@ using namespace std;
 
 bool isSafe(bool grid[15][15], int n, int i, int j)
 {
-    // Vertically check
+    
     for (int k = i; k >= 0; k++)
     {
         if (grid[k][j])
@@ -15,7 +15,7 @@ bool isSafe(bool grid[15][15], int n, int i, int j)
             return false;
         }
     }
-    // Left Diagonal check
+    
     for (int x = i, y = j; x >= 0, y >= 0; x--, y--)
     {
         if (grid[x][y])

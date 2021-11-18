@@ -1,5 +1,14 @@
 {
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "*.tcc": "cpp",
+        "ios": "cpp",
+        "tuple": "cpp",
+        "iomanip": "cpp",
+        "cmath": "cpp",
+        "random": "cpp",
+        "algorithm": "cpp",
+        "valarray": "cpp"
     }
 }

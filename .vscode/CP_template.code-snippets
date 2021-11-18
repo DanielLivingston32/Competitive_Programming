@@ -1,0 +1,23 @@
+{
+	"My competitive programming template": {
+		"prefix": "CP_template",
+		"body": [
+		  "#include <bits/stdc++.h>",
+		  "",
+		  "#define ll long long",
+		  "#define ld long int",
+		  "#define MOD 1000000007",
+		  "",
+		  "using namespace std;",
+		  "",
+		  "int main()",
+		  "{",
+		  "    ios_base::sync_with_stdio(0);",
+		  "    cin.tie(0);",
+		  "",
+		  "    return 0;",
+		  "}"
+		],
+		"description": "My competitive programming template"
+	  }
+}
