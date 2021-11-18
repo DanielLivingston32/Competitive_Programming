@@ -28,4 +28,8 @@ int main()
     cout << ans;
 
     return 0;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c4110ae6e806a3628ddb580b1dc27e48c4c652ac

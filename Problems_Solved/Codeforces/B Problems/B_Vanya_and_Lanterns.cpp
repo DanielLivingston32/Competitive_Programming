@@ -36,4 +36,8 @@ int main()
     cout << fixed << setprecision(10) << max((double)maxDistance / 2.00, max(lowerBound, upperBound));
 
     return 0;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c4110ae6e806a3628ddb580b1dc27e48c4c652ac
