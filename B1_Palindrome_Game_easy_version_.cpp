@@ -74,8 +74,59 @@ long long pow(long long base, long long n, long long m = MOD)
 
 // --------SOLVE---------
 
+bool checkPalindrome(string input)
+{
+    int n = input.length();
+    for (int i = 0; i < n / 2; i++)
+    {
+        if (input[i] != input[n - 1 - i])
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
 void solve()
 {
+    int n;
+    string input;
+    cin >> n;
+    cin >> input;
+    int z_cnt = 0;
+    int i = 0;
+    vector<int> zero_idx;
+    while (i < n)
+    {
+        if (input[i] == '0')
+        {
+            z_cnt++;
+        }
+        i++;
+    }
+    if (z_cnt == 0)
+    {
+        cout << "DRAW" << endl;
+    }
+    else if (z_cnt == 1)
+    {
+        if (checkPalindrome(input))
+        {
+            cout << "BOB" << endl;
+        }
+        else
+        {
+            cout << "ALICE" << endl;
+        }
+    }
+    else if (z_cnt & 1)
+    {
+        cout << "ALICE" << endl;
+    }
+    else
+    {
+        cout << "BOB" << endl;
+    }
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +137,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

@@ -76,6 +76,77 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n, x, y;
+    cin >> n >> x >> y;
+    int diff = y - x;
+    int cnt = 0;
+    if (n >= diff + 1)
+    {
+        for (int i = x; i <= y; i++)
+        {
+            cout << i << " ";
+            cnt++;
+        }
+        // Elements before x
+        int temp = x - 1;
+        while (cnt < n)
+        {
+            if (temp <= 0)
+            {
+                break;
+            }
+            cout << temp << " ";
+            cnt++;
+            temp--;
+        }
+        // Elements after y
+        temp = y + 1;
+        while (cnt < n)
+        {
+            cout << temp << " ";
+            cnt++;
+            temp++;
+        }
+    }
+    else
+    {
+        int div = n - 1;
+        while (div > 0)
+        {
+            if (diff % div == 0)
+            {
+                break;
+            }
+            div--;
+        }
+        int d = diff / div;
+        cnt += div + 1;
+        for (int i = x; i <= y; i += d)
+        {
+            cout << i << " ";
+        }
+        // Elements before x
+        int temp = x - d;
+        while (cnt < n)
+        {
+            if (temp <= 0)
+            {
+                break;
+            }
+            cout << temp << " ";
+            cnt++;
+            temp -= d;
+        }
+        // Elements after y
+        temp = y + d;
+        while (cnt < n)
+        {
+            cout << temp << " ";
+            cnt++;
+            temp += d;
+        }
+    }
+    cout << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +157,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

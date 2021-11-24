@@ -73,9 +73,61 @@ long long pow(long long base, long long n, long long m = MOD)
 }
 
 // --------SOLVE---------
-
+// 97 - a
 void solve()
 {
+    int n, k;
+    cin >> n >> k;
+    int alph_cnt[26] = {0};
+    int update_cnt[26] = {0};
+    string input;
+    cin >> input;
+    for (int i = 0; i < n; i++)
+    {
+        alph_cnt[input[i] - 97]++;
+        update_cnt[input[i] - 97]++;
+    }
+    for (int i = 0; i < 27; i++)
+    {
+        if (k == 0)
+        {
+            break;
+        }
+        if (k > update_cnt[i])
+        {
+            k -= update_cnt[i];
+            update_cnt[i] = 0;
+        }
+        else
+        {
+            update_cnt[i] -= k;
+            k = 0;
+        }
+    }
+    string output = "";
+    // for (int i = 0; i < 27; i++)
+    // {
+    //     cout << alph_cnt[i] << " " << update_cnt[i] << endl;
+    // }
+    for (int i = 0; i < n; i++)
+    {
+        if (update_cnt[input[i] - 97] == 0)
+        {
+            continue;
+        }
+        else
+        {
+            if (alph_cnt[input[i] - 97] == update_cnt[input[i] - 97])
+            {
+                output += input[i];
+            }
+            else
+            {
+                alph_cnt[input[i] - 97]--;
+            }
+        }
+    }
+    cout << output;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +138,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    // cin >> t;
     while (t--)
     {
         solve();

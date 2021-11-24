@@ -73,9 +73,62 @@ long long pow(long long base, long long n, long long m = MOD)
 }
 
 // --------SOLVE---------
+bool cmp(pair<int, int> a, pair<int, int> b)
+{
+    if (a.first == b.first)
+    {
+        return a.second < b.second;
+    }
+    return a.first < b.first;
+}
 
 void solve()
 {
+    int n;
+    cin >> n;
+    vector<pair<int, int>> arr(n);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i].first;
+        cin >> arr[i].second;
+    }
+    sort(arr.begin(), arr.end(), cmp);
+    int x = 0;
+    int y = 0;
+    int calc, calc1;
+    string result = "";
+    bool possible = true;
+    for (int i = 0; i < n; i++)
+    {
+        // cout << arr[i].first << " " << arr[i].second;
+        calc = arr[i].first - x;
+        calc1 = arr[i].second - y;
+        // cout << " " << calc << " " << calc1 << endl;
+        if (calc < 0 or calc1 < 0)
+        {
+            possible = false;
+            break;
+        }
+        if (calc != 0)
+        {
+            result += string(calc, 'R');
+        }
+        if (calc1 != 0)
+        {
+            result += string(calc1, 'U');
+        }
+
+        x = arr[i].first;
+        y = arr[i].second;
+    }
+
+    if (possible)
+    {
+        cout << "YES" << endl
+             << result << endl;
+        return;
+    }
+    cout << "NO" << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +139,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

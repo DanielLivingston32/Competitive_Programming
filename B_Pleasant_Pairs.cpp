@@ -76,6 +76,35 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n;
+    cin >> n;
+    vector<pair<ll, int>> arr(n + 1);
+    for (int i = 1; i <= n; i++)
+    {
+        cin >> arr[i].first;
+        arr[i].second = i;
+    }
+    sort(arr.begin() + 1, arr.end());
+    ld max_l = 2 * n;
+    ll a, b;
+    ll result = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = i + 1; j <= n; j++)
+        {
+            a = arr[i].first * arr[j].first;
+            b = arr[i].second + arr[j].second;
+            if (a == b)
+            {
+                result++;
+            }
+            if (a > max_l)
+            {
+                break;
+            }
+        }
+    }
+    cout << result << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +115,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

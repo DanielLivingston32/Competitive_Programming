@@ -76,6 +76,37 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n;
+    cin >> n;
+    ld arr[n];
+    ll prefixSum[n + 1] = {0};
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+        prefixSum[i + 1] = prefixSum[i] + arr[i];
+    }
+    sort(arr, arr + n);
+    ll sortedPrefixSum[n + 1] = {0};
+    for (int i = 0; i < n; i++)
+    {
+        sortedPrefixSum[i + 1] = sortedPrefixSum[i] + arr[i];
+    }
+    int m;
+    cin >> m;
+    int q, a, b;
+    while (m--)
+    {
+        cin >> q >> a >> b;
+        if (q == 1)
+        {
+            cout << (prefixSum[b] - prefixSum[a - 1]);
+        }
+        else
+        {
+            cout << (sortedPrefixSum[b] - sortedPrefixSum[a - 1]);
+        }
+        cout << endl;
+    }
 }
 
 // --------XXXXXXXXX---------

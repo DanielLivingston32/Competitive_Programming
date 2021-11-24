@@ -76,6 +76,34 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n;
+    cin >> n;
+    vector<int> arr(n + 1, 0);
+    int temp;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> temp;
+        arr[temp]++;
+    }
+
+    int curr;
+    int res = 0;
+    for (int s = 2; s <= 2 * n; s++)
+    {
+        curr = 0;
+        for (int i = 1; i < (s + 1) / 2; i++)
+        {
+            if (s - i > n)
+                continue;
+            curr += min(arr[i], arr[s - i]);
+        }
+        if ((s & 1) == 0)
+        {
+            curr += (arr[s / 2] / 2);
+        }
+        res = max(res, curr);
+    }
+    cout << res << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +114,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

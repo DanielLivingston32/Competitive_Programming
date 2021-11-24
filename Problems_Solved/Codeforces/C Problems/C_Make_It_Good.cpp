@@ -76,6 +76,55 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n;
+    cin >> n;
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    int i = 0, j = n - 1;
+    int k = i, m = j;
+    int prev = 0;
+    int prevIdx = 0;
+    int minVal;
+    int minIdx;
+    while (k <= m)
+    {
+        minVal = min(arr[k], arr[m]);
+        minIdx = (minVal == arr[k] ? k : m);
+
+        if (minVal < prev)
+        {
+            if (prevIdx == (k - 1))
+            {
+                i = k;
+            }
+            else
+            {
+                i = k + 1;
+            }
+            k = i;
+            m = j;
+            prev = 0;
+            prevIdx = -2;
+        }
+        else
+        {
+            prev = minVal;
+            prevIdx = minIdx;
+
+            if (minVal == arr[k])
+            {
+                k++;
+            }
+            else
+            {
+                m--;
+            }
+        }
+    }
+    cout << i << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +135,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

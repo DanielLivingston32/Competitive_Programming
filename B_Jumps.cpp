@@ -76,6 +76,30 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    ld x;
+    cin >> x;
+    int i = 1;
+    ld sum = 0;
+    while (sum < x)
+    {
+        sum += i;
+        i++;
+    }
+    i--;
+    ld diff = sum - x;
+    if (diff == 0)
+    {
+        cout << i;
+    }
+    else if (diff == 1)
+    {
+        cout << i + 1;
+    }
+    else
+    {
+        cout << i;
+    }
+    cout << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +110,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

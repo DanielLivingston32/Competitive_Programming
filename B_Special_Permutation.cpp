@@ -76,6 +76,36 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n, a, b;
+    cin >> n >> a >> b;
+
+    if (a > b and (a != (n / 2) + 1 or b != (n / 2)))
+    {
+        cout << -1 << endl;
+        return;
+    }
+    if (a < b and (b <= n / 2 or a > n / 2))
+    {
+        cout << -1 << endl;
+        return;
+    }
+
+    int arr[n + 1];
+    for (int i = 0; i <= n; i++)
+    {
+        arr[i] = i;
+    }
+    if (a < b)
+    {
+        swap(arr[a], arr[b]);
+    }
+
+    for (int i = n; i >= 1; i--)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    return;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +116,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

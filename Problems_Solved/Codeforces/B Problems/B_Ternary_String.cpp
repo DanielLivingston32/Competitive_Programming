@@ -76,6 +76,37 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    string input;
+    cin >> input;
+    ld n = input.length();
+    bool arr[4] = {0};
+    int idx[4] = {0};
+    int maxIdx;
+    int minIdx;
+    int res = INT_MAX;
+    int c_idx;
+    for (int i = 0; i < n; i++)
+    {
+        c_idx = input[i] - '0';
+        arr[c_idx] = true;
+        idx[c_idx] = i;
+
+        if (arr[1] and arr[2] and arr[3])
+        {
+            minIdx = min(min(idx[1], idx[2]), idx[3]);
+            maxIdx = max(max(idx[1], idx[2]), idx[3]);
+            res = min(res, maxIdx - minIdx + 1);
+        }
+    }
+    if (res == INT_MAX)
+    {
+        cout << 0;
+    }
+    else
+    {
+        cout << res;
+    }
+    cout << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +117,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

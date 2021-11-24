@@ -76,6 +76,26 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n;
+    cin >> n;
+    ld arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    sort(arr, arr + n);
+    int i = n - 1;
+    while (i >= 0)
+    {
+        cout << arr[i] << " ";
+        i -= 2;
+    }
+    i = (n & 1 ? 1 : 0);
+    while (i < n)
+    {
+        cout << arr[i] << " ";
+        i += 2;
+    }
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +106,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    // cin >> t;
     while (t--)
     {
         solve();

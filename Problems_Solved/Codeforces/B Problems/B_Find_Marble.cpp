@@ -76,6 +76,30 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n, s, t;
+    cin >> n >> s >> t;
+    int arr[n + 1];
+    vector<int> path;
+    for (int i = 1; i <= n; i++)
+    {
+        cin >> arr[i];
+    }
+    int i = n + 1;
+    int next = s;
+    while (i--)
+    {
+        path.push_back(next);
+        next = arr[next];
+    }
+    for (i = 0; i < path.size(); i++)
+    {
+        if (path[i] == t)
+        {
+            cout << i;
+            return;
+        }
+    }
+    cout << -1;
 }
 
 // --------XXXXXXXXX---------

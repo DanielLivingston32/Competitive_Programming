@@ -14,19 +14,37 @@ int main()
     int n;
     cin >> n;
     int arr[n];
-    int consec_arr[n] = {0};
+    int o_cnt = 0;
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
-        if (arr[i] == 0)
+        if (arr[i] == 1)
         {
-            consec_arr[i] == 1;
+            o_cnt++;
+            arr[i] = -1;
         }
         else
         {
-            consec_arr[i] == 0;
+            arr[i] = 1;
         }
     }
-
+    int max_so_far = INT_MIN;
+    int max_ending_here = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (max_ending_here + arr[i] >= arr[i])
+        {
+            max_ending_here += arr[i];
+        }
+        else
+        {
+            max_ending_here = arr[i];
+        }
+        if (max_so_far < max_ending_here)
+        {
+            max_so_far = max_ending_here;
+        }
+    }
+    cout << max_so_far + o_cnt;
     return 0;
 }

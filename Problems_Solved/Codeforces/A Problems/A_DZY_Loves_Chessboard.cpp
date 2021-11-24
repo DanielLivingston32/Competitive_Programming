@@ -76,6 +76,41 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n, m;
+    cin >> n >> m;
+    bool isWhite = true;
+    bool changeBlack = false;
+    string input;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> input;
+        if (changeBlack)
+        {
+            isWhite = false;
+        }
+        else
+        {
+            isWhite = true;
+        }
+
+        for (int j = 0; j < m; j++)
+        {
+            if (input[j] == '.')
+            {
+                if (isWhite)
+                {
+                    input[j] = 'W';
+                }
+                else
+                {
+                    input[j] = 'B';
+                }
+            }
+            isWhite = !isWhite;
+        }
+        changeBlack = !changeBlack;
+        cout << input << endl;
+    }
 }
 
 // --------XXXXXXXXX---------

@@ -76,6 +76,40 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n, x;
+    cin >> n >> x;
+    int div = 0;
+    int temp;
+    ld sum = 0;
+    int minIdx = n;
+    int maxIdx = -1;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> temp;
+        if (temp % x == 0)
+        {
+            div++;
+        }
+        else
+        {
+            minIdx = min(minIdx, i);
+            maxIdx = max(maxIdx, i);
+        }
+        sum += temp;
+    }
+    if (div == n)
+    {
+        cout << -1;
+    }
+    else if (sum % x == 0)
+    {
+        cout << n - min(n - maxIdx, minIdx + 1);
+    }
+    else
+    {
+        cout << n;
+    }
+    cout << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +120,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

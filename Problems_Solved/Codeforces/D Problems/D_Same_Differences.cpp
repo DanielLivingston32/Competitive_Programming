@@ -76,6 +76,40 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n;
+    cin >> n;
+    int arr[n];
+    int temp;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+        arr[i] -= i;
+    }
+    sort(arr, arr + n);
+    ll res = 0;
+    ll similar = 1;
+    ll prev = arr[0];
+    for (int i = 1; i < n; i++)
+    {
+        if (arr[i] == prev)
+        {
+            similar++;
+        }
+        else
+        {
+            if (similar > 1)
+            {
+                res += (similar * (similar - 1)) / 2;
+            }
+            similar = 1;
+            prev = arr[i];
+        }
+    }
+    if (similar > 1)
+    {
+        res += (similar * (similar - 1)) / 2;
+    }
+    cout << res << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -85,8 +119,8 @@ int main()
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    int t = 1;
-    //  cin >> t;
+    int t;
+    cin >> t;
     while (t--)
     {
         solve();

@@ -76,6 +76,26 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n;
+    cin >> n;
+    ld arr[n];
+    ll result = 0;
+    int k;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i + 2; j < n; j++)
+        {
+            ld sum = arr[i] + arr[j];
+            k = upper_bound(arr + i, arr + j, sum / 2) - arr;
+            k = min(k, j - 1);
+            result += max((arr[i] - arr[k]) * (arr[k] - arr[j]), (arr[i] - arr[k - 1]) * (arr[k - 1] - arr[j]));
+        }
+    }
+    cout << result << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +106,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

@@ -74,8 +74,39 @@ long long pow(long long base, long long n, long long m = MOD)
 
 // --------SOLVE---------
 
+void printQueue(queue<int> q)
+{
+    //printing content of queue
+    while (!q.empty())
+    {
+        cout << " " << q.front();
+        q.pop();
+    }
+    cout << endl;
+}
 void solve()
 {
+    int n;
+    cin >> n;
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    sort(arr, arr + n);
+    int curr = 1;
+    int res = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (curr == arr[i])
+        {
+            curr = 1;
+            res++;
+            continue;
+        }
+        curr++;
+    }
+    cout << res << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +117,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

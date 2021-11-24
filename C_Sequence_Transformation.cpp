@@ -76,6 +76,61 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n;
+    cin >> n;
+    int arr[n];
+    unordered_map<int, vector<int>> hash;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+        hash[arr[i]].pb(i);
+    }
+    int result = INT_MAX;
+    if (n == 1)
+    {
+        cout << 0 << endl;
+
+        return;
+    }
+    for (auto itr : hash)
+    {
+        int m = itr.second.size();
+        int ans = 0;
+        int calc;
+        if (m > 1)
+        {
+            for (int i = 1; i < m; i++)
+            {
+                calc = itr.second[i] - itr.second[i - 1];
+                if (calc > 1)
+                {
+                    ans++;
+                }
+            }
+            if (itr.second[0] != 0)
+            {
+                ans++;
+            }
+            if (itr.second[m - 1] != n - 1)
+            {
+                ans++;
+            }
+        }
+        else
+        {
+            if (itr.second[0] == 0 or itr.second[0] == n - 1)
+            {
+                ans = 1;
+            }
+            else
+            {
+                ans = 2;
+            }
+        }
+        result = min(result, ans);
+    }
+
+    cout << result << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +141,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

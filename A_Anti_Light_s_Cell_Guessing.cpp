@@ -76,6 +76,21 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    ld n, m;
+    cin >> n >> m;
+    if (n == 1 and m == 1)
+    {
+        cout << 0;
+    }
+    else if (n == 1 or m == 1)
+    {
+        cout << 1;
+    }
+    else
+    {
+        cout << 2;
+    }
+    cout << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +101,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

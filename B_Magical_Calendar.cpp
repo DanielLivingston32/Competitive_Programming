@@ -76,6 +76,21 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    ld n, r;
+    cin >> n >> r;
+
+    ll res = min(n, r);
+    if (n <= r)
+    {
+        res = (res * (res - 1)) / 2;
+        res += 1;
+    }
+    else
+    {
+        res = (res * (res + 1)) / 2;
+    }
+
+    cout << res << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +101,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

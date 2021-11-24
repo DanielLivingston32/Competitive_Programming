@@ -76,6 +76,22 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    string input;
+    cin >> input;
+    int temp, n = input.length();
+    for (int i = 0; i < n; i++)
+    {
+        temp = input[i] - '0';
+        if (temp > 4 and temp != 9)
+        {
+            input[i] = '0' + (9 - temp);
+        }
+        if (temp == 9 and i != 0)
+        {
+            input[i] = '0' + (9 - temp);
+        }
+    }
+    cout << input;
 }
 
 // --------XXXXXXXXX---------

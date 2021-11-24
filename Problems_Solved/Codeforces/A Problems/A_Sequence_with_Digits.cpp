@@ -74,8 +74,36 @@ long long pow(long long base, long long n, long long m = MOD)
 
 // --------SOLVE---------
 
+ll calc(ll a)
+{
+    ll mini = 9, maxi = 0;
+    ll last_digit;
+    while (a)
+    {
+        last_digit = a % 10;
+        a /= 10;
+        mini = min(mini, last_digit);
+        maxi = max(maxi, last_digit);
+    }
+    return mini * maxi;
+}
+
 void solve()
 {
+    ll a, k;
+    cin >> a >> k;
+    ll temp;
+
+    while (--k)
+    {
+        temp = calc(a);
+        if (temp == 0)
+        {
+            break;
+        }
+        a += temp;
+    }
+    cout << a << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +114,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

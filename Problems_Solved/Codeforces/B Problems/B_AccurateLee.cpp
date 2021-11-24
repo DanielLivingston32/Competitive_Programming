@@ -76,6 +76,60 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n;
+    cin >> n;
+    string input;
+    cin >> input;
+    int len = input.length();
+    int i = n - 1;
+    while (i >= 0)
+    {
+        if (i - 1 >= 0 and input[i] == '0' and input[i - 1] == '1')
+        {
+            int cnt_0 = 0;
+            int j = i;
+            len = input.length();
+            while (j < len)
+            {
+                if (input[j] == '0')
+                {
+                    cnt_0++;
+                    j++;
+                    continue;
+                }
+                break;
+            }
+            int cnt_1 = 0;
+            j = i - 1;
+            len = input.length();
+            while (j >= 0)
+            {
+                if (input[j] == '1')
+                {
+                    cnt_1++;
+                    j--;
+                    continue;
+                }
+                break;
+            }
+            while (cnt_1 and cnt_0)
+            {
+                if (cnt_1 >= cnt_0)
+                {
+                    input.erase(input.begin() + i - 1);
+                    i = i - 1;
+                    cnt_1--;
+                }
+                else
+                {
+                    input.erase(input.begin() + i);
+                    cnt_0--;
+                }
+            }
+        }
+        i--;
+    }
+    cout << input << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +140,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

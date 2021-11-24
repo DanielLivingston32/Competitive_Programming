@@ -76,6 +76,43 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n;
+    cin >> n;
+    ld arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    ll result = 0;
+    bool pos = (arr[0] > 0);
+    ld max_so_far = LONG_MIN;
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] > 0)
+        {
+            if (pos)
+            {
+                max_so_far = max(arr[i], max_so_far);
+                continue;
+            }
+            result += max_so_far;
+            max_so_far = arr[i];
+            pos = true;
+        }
+        else
+        {
+            if (!pos)
+            {
+                max_so_far = max(arr[i], max_so_far);
+                continue;
+            }
+            result += max_so_far;
+            max_so_far = arr[i];
+            pos = false;
+        }
+    }
+    result += max_so_far;
+    cout << result << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -85,8 +122,8 @@ int main()
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    int t = 1;
-    //  cin >> t;
+    int t;
+    cin >> t;
     while (t--)
     {
         solve();

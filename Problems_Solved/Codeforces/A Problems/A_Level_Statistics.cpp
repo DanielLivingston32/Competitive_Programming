@@ -76,6 +76,35 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n;
+    cin >> n;
+    bool isCorrect = true;
+    int p, c;
+    int prev_p = 0, prev_c = 0;
+    while (n--)
+    {
+        cin >> p >> c;
+        if (p >= prev_p and c >= prev_c)
+        {
+            if (c - prev_c > p - prev_p)
+            {
+                isCorrect = false;
+                continue;
+            }
+            prev_c = c;
+            prev_p = p;
+            continue;
+        }
+        isCorrect = false;
+    }
+    if (isCorrect)
+    {
+        cout << "YES\n";
+    }
+    else
+    {
+        cout << "NO\n";
+    }
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +115,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

@@ -76,6 +76,31 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    ll n;
+    cin >> n;
+    ll arr[n];
+    ll sum = 0;
+    ll cnt[3] = {0};
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+        sum += arr[i];
+        arr[i] = arr[i] % 3;
+        cnt[arr[i]]++;
+    }
+    if (sum % 3 != 0)
+    {
+        cout << -1 << endl;
+        return;
+    }
+    ll res = 0;
+    ll mini = min(cnt[1], cnt[2]);
+    res += mini;
+    cnt[1] -= mini;
+    cnt[2] -= mini;
+    res += ((cnt[1] / 3) * 2);
+    res += ((cnt[2] / 3) * 2);
+    cout << res << endl;
 }
 
 // --------XXXXXXXXX---------
@@ -86,7 +111,7 @@ int main()
     cin.tie(0);
 
     int t = 1;
-    //  cin >> t;
+    cin >> t;
     while (t--)
     {
         solve();

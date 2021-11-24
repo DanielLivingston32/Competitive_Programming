@@ -76,6 +76,40 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n;
+    cin >> n;
+    int o_cnt = 0, t_cnt = 0;
+    int temp;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> temp;
+        if (temp == 1)
+        {
+            o_cnt++;
+        }
+        else
+        {
+            t_cnt++;
+        }
+    }
+    if (o_cnt >= 1 and t_cnt >= 1)
+    {
+        cout << 2 << " " << 1 << " ";
+        o_cnt--;
+        t_cnt--;
+    }
+
+    while (t_cnt)
+    {
+        cout << 2 << " ";
+        t_cnt--;
+    }
+
+    while (o_cnt)
+    {
+        cout << 1 << " ";
+        o_cnt--;
+    }
 }
 
 // --------XXXXXXXXX---------

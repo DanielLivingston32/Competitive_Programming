@@ -76,6 +76,47 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    ld n, k;
+    cin >> n >> k;
+    string input;
+    cin >> input;
+    char check[k];
+    for (int i = 0; i < k; i++)
+    {
+        cin >> check[i];
+    }
+    ll o = 0;
+    ll result = 0;
+    for (ld j = 0; j < n; j++)
+    {
+        bool isPresent = false;
+        for (int i = 0; i < k; i++)
+        {
+            if (input[j] == check[i])
+            {
+                isPresent = true;
+                break;
+            }
+        }
+        if (isPresent)
+        {
+            o++;
+        }
+        else
+        {
+            if (o)
+            {
+                result += (o * (o + 1)) / 2;
+            }
+            o = 0;
+        }
+    }
+
+    if (o)
+    {
+        result += (o * (o + 1)) / 2;
+    }
+    cout << result;
 }
 
 // --------XXXXXXXXX---------

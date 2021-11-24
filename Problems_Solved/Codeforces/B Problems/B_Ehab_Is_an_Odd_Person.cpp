@@ -76,6 +76,32 @@ long long pow(long long base, long long n, long long m = MOD)
 
 void solve()
 {
+    int n;
+    cin >> n;
+    ld arr[n];
+    bool hasOdd = false;
+    ;
+    bool hasEven = false;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+        if (!hasEven)
+        {
+            hasEven = (arr[i] & 1) == 0;
+        }
+        if (!hasOdd)
+        {
+            hasOdd = (arr[i] & 1);
+        }
+    }
+    if (hasEven and hasOdd)
+    {
+        sort(arr, arr + n);
+    }
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
 }
 
 // --------XXXXXXXXX---------
